@@ -7,50 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		213B5BD41ACF0E8C00C1B46F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B5BD31ACF0E8C00C1B46F /* main.m */; };
-		213B5BD71ACF0E8C00C1B46F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B5BD61ACF0E8C00C1B46F /* AppDelegate.m */; };
-		213B5BDA1ACF0E8C00C1B46F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B5BD91ACF0E8C00C1B46F /* ViewController.m */; };
-		213B5BDD1ACF0E8C00C1B46F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213B5BDB1ACF0E8C00C1B46F /* Main.storyboard */; };
-		213B5BDF1ACF0E8C00C1B46F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213B5BDE1ACF0E8C00C1B46F /* Images.xcassets */; };
-		213B5BE21ACF0E8C00C1B46F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213B5BE01ACF0E8C00C1B46F /* LaunchScreen.xib */; };
-		213B5BEE1ACF0E8C00C1B46F /* NearMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B5BED1ACF0E8C00C1B46F /* NearMeTests.m */; };
+		212D068C1ACF1829001782FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 212D068B1ACF1829001782FD /* MapKit.framework */; };
+		213B5C061ACF104500C1B46F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B5C051ACF104500C1B46F /* main.m */; };
+		213B5C091ACF104500C1B46F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B5C081ACF104500C1B46F /* AppDelegate.m */; };
+		213B5C0C1ACF104600C1B46F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B5C0B1ACF104600C1B46F /* FirstViewController.m */; };
+		213B5C0F1ACF104600C1B46F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B5C0E1ACF104600C1B46F /* SecondViewController.m */; };
+		213B5C121ACF104600C1B46F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213B5C101ACF104600C1B46F /* Main.storyboard */; };
+		213B5C141ACF104700C1B46F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213B5C131ACF104700C1B46F /* Images.xcassets */; };
+		213B5C171ACF104700C1B46F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213B5C151ACF104700C1B46F /* LaunchScreen.xib */; };
+		213B5C231ACF104700C1B46F /* NearMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B5C221ACF104700C1B46F /* NearMeTests.m */; };
+		21F04FB81ACF20AF007A085F /* BloodDonarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F04FB71ACF20AF007A085F /* BloodDonarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		213B5BE81ACF0E8C00C1B46F /* PBXContainerItemProxy */ = {
+		213B5C1D1ACF104700C1B46F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 213B5BC61ACF0E8C00C1B46F /* Project object */;
+			containerPortal = 213B5BF81ACF104400C1B46F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 213B5BCD1ACF0E8C00C1B46F;
+			remoteGlobalIDString = 213B5BFF1ACF104400C1B46F;
 			remoteInfo = NearMe;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		213B5BCE1ACF0E8C00C1B46F /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		213B5BD21ACF0E8C00C1B46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		213B5BD31ACF0E8C00C1B46F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		213B5BD51ACF0E8C00C1B46F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		213B5BD61ACF0E8C00C1B46F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		213B5BD81ACF0E8C00C1B46F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		213B5BD91ACF0E8C00C1B46F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		213B5BDC1ACF0E8C00C1B46F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		213B5BDE1ACF0E8C00C1B46F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		213B5BE11ACF0E8C00C1B46F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		213B5BE71ACF0E8C00C1B46F /* NearMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		213B5BEC1ACF0E8C00C1B46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		213B5BED1ACF0E8C00C1B46F /* NearMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearMeTests.m; sourceTree = "<group>"; };
+		212D068B1ACF1829001782FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		213B5C001ACF104400C1B46F /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		213B5C041ACF104500C1B46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		213B5C051ACF104500C1B46F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		213B5C071ACF104500C1B46F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		213B5C081ACF104500C1B46F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		213B5C0A1ACF104500C1B46F /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		213B5C0B1ACF104600C1B46F /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		213B5C0D1ACF104600C1B46F /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		213B5C0E1ACF104600C1B46F /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		213B5C111ACF104600C1B46F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		213B5C131ACF104700C1B46F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		213B5C161ACF104700C1B46F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		213B5C1C1ACF104700C1B46F /* NearMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		213B5C211ACF104700C1B46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		213B5C221ACF104700C1B46F /* NearMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearMeTests.m; sourceTree = "<group>"; };
+		21F04FB61ACF20AF007A085F /* BloodDonarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloodDonarViewController.h; sourceTree = "<group>"; };
+		21F04FB71ACF20AF007A085F /* BloodDonarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloodDonarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		213B5BCB1ACF0E8C00C1B46F /* Frameworks */ = {
+		213B5BFD1ACF104400C1B46F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				212D068C1ACF1829001782FD /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		213B5BE41ACF0E8C00C1B46F /* Frameworks */ = {
+		213B5C191ACF104700C1B46F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,61 +69,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		213B5BC51ACF0E8C00C1B46F = {
+		213B5BF71ACF104400C1B46F = {
 			isa = PBXGroup;
 			children = (
-				213B5BD01ACF0E8C00C1B46F /* NearMe */,
-				213B5BEA1ACF0E8C00C1B46F /* NearMeTests */,
-				213B5BCF1ACF0E8C00C1B46F /* Products */,
+				212D068B1ACF1829001782FD /* MapKit.framework */,
+				213B5C021ACF104400C1B46F /* NearMe */,
+				213B5C1F1ACF104700C1B46F /* NearMeTests */,
+				213B5C011ACF104400C1B46F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		213B5BCF1ACF0E8C00C1B46F /* Products */ = {
+		213B5C011ACF104400C1B46F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				213B5BCE1ACF0E8C00C1B46F /* NearMe.app */,
-				213B5BE71ACF0E8C00C1B46F /* NearMeTests.xctest */,
+				213B5C001ACF104400C1B46F /* NearMe.app */,
+				213B5C1C1ACF104700C1B46F /* NearMeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		213B5BD01ACF0E8C00C1B46F /* NearMe */ = {
+		213B5C021ACF104400C1B46F /* NearMe */ = {
 			isa = PBXGroup;
 			children = (
-				213B5BD51ACF0E8C00C1B46F /* AppDelegate.h */,
-				213B5BD61ACF0E8C00C1B46F /* AppDelegate.m */,
-				213B5BD81ACF0E8C00C1B46F /* ViewController.h */,
-				213B5BD91ACF0E8C00C1B46F /* ViewController.m */,
-				213B5BDB1ACF0E8C00C1B46F /* Main.storyboard */,
-				213B5BDE1ACF0E8C00C1B46F /* Images.xcassets */,
-				213B5BE01ACF0E8C00C1B46F /* LaunchScreen.xib */,
-				213B5BD11ACF0E8C00C1B46F /* Supporting Files */,
+				213B5C071ACF104500C1B46F /* AppDelegate.h */,
+				213B5C081ACF104500C1B46F /* AppDelegate.m */,
+				213B5C0A1ACF104500C1B46F /* FirstViewController.h */,
+				213B5C0B1ACF104600C1B46F /* FirstViewController.m */,
+				213B5C0D1ACF104600C1B46F /* SecondViewController.h */,
+				213B5C0E1ACF104600C1B46F /* SecondViewController.m */,
+				21F04FB61ACF20AF007A085F /* BloodDonarViewController.h */,
+				21F04FB71ACF20AF007A085F /* BloodDonarViewController.m */,
+				213B5C101ACF104600C1B46F /* Main.storyboard */,
+				213B5C131ACF104700C1B46F /* Images.xcassets */,
+				213B5C151ACF104700C1B46F /* LaunchScreen.xib */,
+				213B5C031ACF104500C1B46F /* Supporting Files */,
 			);
 			path = NearMe;
 			sourceTree = "<group>";
 		};
-		213B5BD11ACF0E8C00C1B46F /* Supporting Files */ = {
+		213B5C031ACF104500C1B46F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				213B5BD21ACF0E8C00C1B46F /* Info.plist */,
-				213B5BD31ACF0E8C00C1B46F /* main.m */,
+				213B5C041ACF104500C1B46F /* Info.plist */,
+				213B5C051ACF104500C1B46F /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		213B5BEA1ACF0E8C00C1B46F /* NearMeTests */ = {
+		213B5C1F1ACF104700C1B46F /* NearMeTests */ = {
 			isa = PBXGroup;
 			children = (
-				213B5BED1ACF0E8C00C1B46F /* NearMeTests.m */,
-				213B5BEB1ACF0E8C00C1B46F /* Supporting Files */,
+				213B5C221ACF104700C1B46F /* NearMeTests.m */,
+				213B5C201ACF104700C1B46F /* Supporting Files */,
 			);
 			path = NearMeTests;
 			sourceTree = "<group>";
 		};
-		213B5BEB1ACF0E8C00C1B46F /* Supporting Files */ = {
+		213B5C201ACF104700C1B46F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				213B5BEC1ACF0E8C00C1B46F /* Info.plist */,
+				213B5C211ACF104700C1B46F /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -122,13 +136,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		213B5BCD1ACF0E8C00C1B46F /* NearMe */ = {
+		213B5BFF1ACF104400C1B46F /* NearMe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 213B5BF11ACF0E8C00C1B46F /* Build configuration list for PBXNativeTarget "NearMe" */;
+			buildConfigurationList = 213B5C261ACF104700C1B46F /* Build configuration list for PBXNativeTarget "NearMe" */;
 			buildPhases = (
-				213B5BCA1ACF0E8C00C1B46F /* Sources */,
-				213B5BCB1ACF0E8C00C1B46F /* Frameworks */,
-				213B5BCC1ACF0E8C00C1B46F /* Resources */,
+				213B5BFC1ACF104400C1B46F /* Sources */,
+				213B5BFD1ACF104400C1B46F /* Frameworks */,
+				213B5BFE1ACF104400C1B46F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -136,46 +150,46 @@
 			);
 			name = NearMe;
 			productName = NearMe;
-			productReference = 213B5BCE1ACF0E8C00C1B46F /* NearMe.app */;
+			productReference = 213B5C001ACF104400C1B46F /* NearMe.app */;
 			productType = "com.apple.product-type.application";
 		};
-		213B5BE61ACF0E8C00C1B46F /* NearMeTests */ = {
+		213B5C1B1ACF104700C1B46F /* NearMeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 213B5BF41ACF0E8C00C1B46F /* Build configuration list for PBXNativeTarget "NearMeTests" */;
+			buildConfigurationList = 213B5C291ACF104700C1B46F /* Build configuration list for PBXNativeTarget "NearMeTests" */;
 			buildPhases = (
-				213B5BE31ACF0E8C00C1B46F /* Sources */,
-				213B5BE41ACF0E8C00C1B46F /* Frameworks */,
-				213B5BE51ACF0E8C00C1B46F /* Resources */,
+				213B5C181ACF104700C1B46F /* Sources */,
+				213B5C191ACF104700C1B46F /* Frameworks */,
+				213B5C1A1ACF104700C1B46F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				213B5BE91ACF0E8C00C1B46F /* PBXTargetDependency */,
+				213B5C1E1ACF104700C1B46F /* PBXTargetDependency */,
 			);
 			name = NearMeTests;
 			productName = NearMeTests;
-			productReference = 213B5BE71ACF0E8C00C1B46F /* NearMeTests.xctest */;
+			productReference = 213B5C1C1ACF104700C1B46F /* NearMeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		213B5BC61ACF0E8C00C1B46F /* Project object */ = {
+		213B5BF81ACF104400C1B46F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Mithun Reddy";
 				TargetAttributes = {
-					213B5BCD1ACF0E8C00C1B46F = {
+					213B5BFF1ACF104400C1B46F = {
 						CreatedOnToolsVersion = 6.2;
 					};
-					213B5BE61ACF0E8C00C1B46F = {
+					213B5C1B1ACF104700C1B46F = {
 						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 213B5BCD1ACF0E8C00C1B46F;
+						TestTargetID = 213B5BFF1ACF104400C1B46F;
 					};
 				};
 			};
-			buildConfigurationList = 213B5BC91ACF0E8C00C1B46F /* Build configuration list for PBXProject "NearMe" */;
+			buildConfigurationList = 213B5BFB1ACF104400C1B46F /* Build configuration list for PBXProject "NearMe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -183,29 +197,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 213B5BC51ACF0E8C00C1B46F;
-			productRefGroup = 213B5BCF1ACF0E8C00C1B46F /* Products */;
+			mainGroup = 213B5BF71ACF104400C1B46F;
+			productRefGroup = 213B5C011ACF104400C1B46F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				213B5BCD1ACF0E8C00C1B46F /* NearMe */,
-				213B5BE61ACF0E8C00C1B46F /* NearMeTests */,
+				213B5BFF1ACF104400C1B46F /* NearMe */,
+				213B5C1B1ACF104700C1B46F /* NearMeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		213B5BCC1ACF0E8C00C1B46F /* Resources */ = {
+		213B5BFE1ACF104400C1B46F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				213B5BDD1ACF0E8C00C1B46F /* Main.storyboard in Resources */,
-				213B5BE21ACF0E8C00C1B46F /* LaunchScreen.xib in Resources */,
-				213B5BDF1ACF0E8C00C1B46F /* Images.xcassets in Resources */,
+				213B5C121ACF104600C1B46F /* Main.storyboard in Resources */,
+				213B5C171ACF104700C1B46F /* LaunchScreen.xib in Resources */,
+				213B5C141ACF104700C1B46F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		213B5BE51ACF0E8C00C1B46F /* Resources */ = {
+		213B5C1A1ACF104700C1B46F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -215,47 +229,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		213B5BCA1ACF0E8C00C1B46F /* Sources */ = {
+		213B5BFC1ACF104400C1B46F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				213B5BDA1ACF0E8C00C1B46F /* ViewController.m in Sources */,
-				213B5BD71ACF0E8C00C1B46F /* AppDelegate.m in Sources */,
-				213B5BD41ACF0E8C00C1B46F /* main.m in Sources */,
+				21F04FB81ACF20AF007A085F /* BloodDonarViewController.m in Sources */,
+				213B5C0F1ACF104600C1B46F /* SecondViewController.m in Sources */,
+				213B5C091ACF104500C1B46F /* AppDelegate.m in Sources */,
+				213B5C0C1ACF104600C1B46F /* FirstViewController.m in Sources */,
+				213B5C061ACF104500C1B46F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		213B5BE31ACF0E8C00C1B46F /* Sources */ = {
+		213B5C181ACF104700C1B46F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				213B5BEE1ACF0E8C00C1B46F /* NearMeTests.m in Sources */,
+				213B5C231ACF104700C1B46F /* NearMeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		213B5BE91ACF0E8C00C1B46F /* PBXTargetDependency */ = {
+		213B5C1E1ACF104700C1B46F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 213B5BCD1ACF0E8C00C1B46F /* NearMe */;
-			targetProxy = 213B5BE81ACF0E8C00C1B46F /* PBXContainerItemProxy */;
+			target = 213B5BFF1ACF104400C1B46F /* NearMe */;
+			targetProxy = 213B5C1D1ACF104700C1B46F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		213B5BDB1ACF0E8C00C1B46F /* Main.storyboard */ = {
+		213B5C101ACF104600C1B46F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				213B5BDC1ACF0E8C00C1B46F /* Base */,
+				213B5C111ACF104600C1B46F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		213B5BE01ACF0E8C00C1B46F /* LaunchScreen.xib */ = {
+		213B5C151ACF104700C1B46F /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				213B5BE11ACF0E8C00C1B46F /* Base */,
+				213B5C161ACF104700C1B46F /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -263,7 +279,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		213B5BEF1ACF0E8C00C1B46F /* Debug */ = {
+		213B5C241ACF104700C1B46F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -304,7 +320,7 @@
 			};
 			name = Debug;
 		};
-		213B5BF01ACF0E8C00C1B46F /* Release */ = {
+		213B5C251ACF104700C1B46F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -339,7 +355,7 @@
 			};
 			name = Release;
 		};
-		213B5BF21ACF0E8C00C1B46F /* Debug */ = {
+		213B5C271ACF104700C1B46F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -349,7 +365,7 @@
 			};
 			name = Debug;
 		};
-		213B5BF31ACF0E8C00C1B46F /* Release */ = {
+		213B5C281ACF104700C1B46F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -359,7 +375,7 @@
 			};
 			name = Release;
 		};
-		213B5BF51ACF0E8C00C1B46F /* Debug */ = {
+		213B5C2A1ACF104700C1B46F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -378,7 +394,7 @@
 			};
 			name = Debug;
 		};
-		213B5BF61ACF0E8C00C1B46F /* Release */ = {
+		213B5C2B1ACF104700C1B46F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -396,32 +412,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		213B5BC91ACF0E8C00C1B46F /* Build configuration list for PBXProject "NearMe" */ = {
+		213B5BFB1ACF104400C1B46F /* Build configuration list for PBXProject "NearMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				213B5BEF1ACF0E8C00C1B46F /* Debug */,
-				213B5BF01ACF0E8C00C1B46F /* Release */,
+				213B5C241ACF104700C1B46F /* Debug */,
+				213B5C251ACF104700C1B46F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		213B5BF11ACF0E8C00C1B46F /* Build configuration list for PBXNativeTarget "NearMe" */ = {
+		213B5C261ACF104700C1B46F /* Build configuration list for PBXNativeTarget "NearMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				213B5BF21ACF0E8C00C1B46F /* Debug */,
-				213B5BF31ACF0E8C00C1B46F /* Release */,
+				213B5C271ACF104700C1B46F /* Debug */,
+				213B5C281ACF104700C1B46F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		213B5BF41ACF0E8C00C1B46F /* Build configuration list for PBXNativeTarget "NearMeTests" */ = {
+		213B5C291ACF104700C1B46F /* Build configuration list for PBXNativeTarget "NearMeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				213B5BF51ACF0E8C00C1B46F /* Debug */,
-				213B5BF61ACF0E8C00C1B46F /* Release */,
+				213B5C2A1ACF104700C1B46F /* Debug */,
+				213B5C2B1ACF104700C1B46F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 213B5BC61ACF0E8C00C1B46F /* Project object */;
+	rootObject = 213B5BF81ACF104400C1B46F /* Project object */;
 }
