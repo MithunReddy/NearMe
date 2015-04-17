@@ -17,6 +17,7 @@
 		213B5C171ACF104700C1B46F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213B5C151ACF104700C1B46F /* LaunchScreen.xib */; };
 		213B5C231ACF104700C1B46F /* NearMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B5C221ACF104700C1B46F /* NearMeTests.m */; };
 		21F04FB81ACF20AF007A085F /* BloodDonarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F04FB71ACF20AF007A085F /* BloodDonarViewController.m */; };
+		21F04FBB1ACF24B3007A085F /* draw something.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F04FBA1ACF24B3007A085F /* draw something.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		213B5C221ACF104700C1B46F /* NearMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearMeTests.m; sourceTree = "<group>"; };
 		21F04FB61ACF20AF007A085F /* BloodDonarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloodDonarViewController.h; sourceTree = "<group>"; };
 		21F04FB71ACF20AF007A085F /* BloodDonarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloodDonarViewController.m; sourceTree = "<group>"; };
+		21F04FBA1ACF24B3007A085F /* draw something.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "draw something.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		213B5C021ACF104400C1B46F /* NearMe */ = {
 			isa = PBXGroup;
 			children = (
+				21F04FB91ACF2369007A085F /* Resources */,
 				213B5C071ACF104500C1B46F /* AppDelegate.h */,
 				213B5C081ACF104500C1B46F /* AppDelegate.m */,
 				213B5C0A1ACF104500C1B46F /* FirstViewController.h */,
@@ -131,6 +134,14 @@
 				213B5C211ACF104700C1B46F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21F04FB91ACF2369007A085F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				21F04FBA1ACF24B3007A085F /* draw something.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				213B5C121ACF104600C1B46F /* Main.storyboard in Resources */,
+				21F04FBB1ACF24B3007A085F /* draw something.png in Resources */,
 				213B5C171ACF104700C1B46F /* LaunchScreen.xib in Resources */,
 				213B5C141ACF104700C1B46F /* Images.xcassets in Resources */,
 			);
