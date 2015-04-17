@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.navigationController.navigationItem.title = @"Hospitals";
+    self.navigationItem.title = @"Hospitals";
     pointsArray = [[NSMutableArray alloc]init];
     latLang = [[NSMutableArray alloc]init];
     self.hospitalsMap.showsUserLocation = YES;
