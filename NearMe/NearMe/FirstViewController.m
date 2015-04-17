@@ -20,8 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.navigationController.title = @"Hospitals";
+    self.navigationController.navigationItem.title = @"Hospitals";
     pointsArray = [[NSMutableArray alloc]init];
+    latLang = [[NSMutableArray alloc]init];
     self.hospitalsMap.showsUserLocation = YES;
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -38,15 +39,37 @@
     [self.hospitalsMap setMapType:MKMapTypeStandard];
     [self.hospitalsMap setZoomEnabled:YES];
     [self.hospitalsMap setScrollEnabled:YES];
-}
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:YES];
-    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+    [self addButtons];
 
-    self.startDraw = [[UIButton alloc]initWithFrame:CGRectMake(width-70, 50, 60, 60)];
+}
+-(void)addButtons{
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+    
+    self.startDraw = [[UIButton alloc]initWithFrame:CGRectMake(width-50, 10, 40, 40)];
     [self.startDraw setBackgroundImage:[UIImage imageNamed:@"draw something.png"] forState:UIControlStateNormal];
     [self.startDraw addTarget:self action:@selector(startDraw:) forControlEvents:UIControlEventTouchUpInside];
     [self.hospitalsMap addSubview:self.startDraw];
+    
+    self.dtopDraw = [[UIButton alloc]initWithFrame:CGRectMake(width-50, 10, 40, 40)];
+    [self.dtopDraw setBackgroundColor:[UIColor redColor]];
+    [self.dtopDraw setTintColor:[UIColor whiteColor]];
+    [self.dtopDraw setTitle:@"X" forState:UIControlStateNormal];
+    [self.dtopDraw addTarget:self action:@selector(clearMap) forControlEvents:UIControlEventTouchUpInside];
+    self.dtopDraw.titleLabel.font = [UIFont boldSystemFontOfSize: 40];
+    [self.hospitalsMap addSubview:self.dtopDraw];
+    
+    self.dtopDraw.hidden = YES;
+}
+-(void)clearMap{
+   // remove overlays
+    self.dtopDraw.hidden = YES;
+    self.startDraw.hidden = NO;
+    [self.hospitalsMap removeOverlays:self.hospitalsMap.overlays];
+
+}
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+
 
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -62,14 +85,14 @@
     [self.hospitalsMap setRegion:region animated:YES];
     
 }
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
-    [self.hospitalsMap setRegion:[self.hospitalsMap regionThatFits:region] animated:YES];
-}
--(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
-
-}
+//- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+//{
+//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+//    [self.hospitalsMap setRegion:[self.hospitalsMap regionThatFits:region] animated:YES];
+//}
+//-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
+//
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -109,16 +132,14 @@
     [super touchesBegan: touches withEvent: event];
     
 }
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+{
+    NSLog(@"stop ****************************");
+    [self stopDraw:self];
+}
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     currentPoint = [touch locationInView:self.hospitalsMap];
-//    if ([pointsArray containsObject:[NSValue valueWithCGPoint:currentPoint]]) {
-//        NSLog(@"stop ****************************");
-//        [self stopDraw:self];
-//        return;
-//    }
-    
-    [pointsArray addObject:[NSValue valueWithCGPoint:currentPoint]];
     UIGraphicsBeginImageContext(CGSizeMake(self.hospitalsMap.frame.size.width, self.hospitalsMap.frame.size.height));
     [drawImage.image drawInRect:CGRectMake(0, 0, self.hospitalsMap.frame.size.width, self.hospitalsMap.frame.size.height)];
     CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
@@ -137,10 +158,11 @@
             // Add code here to do background processing
             CLLocationCoordinate2D centerOfMapCoord = [self.hospitalsMap convertPoint:currentPoint toCoordinateFromView:self.hospitalsMap]; //Step 2
             CLLocation *towerLocation = [[CLLocation alloc] initWithLatitude:centerOfMapCoord.latitude longitude:centerOfMapCoord.longitude];
-            if ([latLang containsObject:towerLocation]) {
-                [self stopDraw:nil];
-            }
+           // NSLog(@"%@",towerLocation);
+
             [latLang addObject:towerLocation];
+           // NSLog(@"latLang:%@",latLang);
+
             dispatch_async( dispatch_get_main_queue(), ^{
                 // Add code here to update the UI/send notifications based on the
                 // results of the background processing
@@ -152,6 +174,13 @@
 }
 - (IBAction)stopDraw:(id)sender {
     [drawingView removeFromSuperview];
+    [drawImage removeFromSuperview];
+    self.dtopDraw.hidden = NO;
+    self.startDraw.hidden = YES;
+
+    self.hospitalsMap.userInteractionEnabled = YES;
+    NSLog(@"latLang:%@",latLang);
+
     CLLocationCoordinate2D *coords =
     
     malloc(sizeof(CLLocationCoordinate2D) * [latLang count]);
@@ -167,7 +196,20 @@
     polygon = [MKPolygon polygonWithCoordinates:coords count:[latLang count]];
     
     free(coords);
-    
+    [latLang removeAllObjects];
     [self.hospitalsMap addOverlay:polygon];
+}
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay
+
+{
+    
+    MKPolygonView *polygonView = [[MKPolygonView alloc] initWithPolygon:overlay];
+    polygonView.lineWidth = 5;
+    polygonView.strokeColor = [UIColor blackColor];
+    polygonView.fillColor = [UIColor clearColor];
+    mapView.userInteractionEnabled = YES;
+    
+    return polygonView;
+    
 }
 @end

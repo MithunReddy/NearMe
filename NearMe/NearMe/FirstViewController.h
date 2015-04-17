@@ -35,7 +35,7 @@
 - (IBAction)startDraw:(id)sender;
 @property(nonatomic,strong)UIView *drawingView;
 - (IBAction)stopDraw:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *dtopDraw;
+@property (strong, nonatomic) IBOutlet UIButton *dtopDraw;
 @property(nonatomic,strong)NSMutableArray *pointsArray;
 
 @end
