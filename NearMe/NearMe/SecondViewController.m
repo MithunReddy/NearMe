@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.navigationController.title = @"Medical shops";
+
     self.pharmacyMap.showsUserLocation = YES;
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;

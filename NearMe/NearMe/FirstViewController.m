@@ -15,11 +15,13 @@
 @end
 
 @implementation FirstViewController
-@synthesize drawingView;
+@synthesize drawingView,pointsArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.navigationController.title = @"Hospitals";
+    pointsArray = [[NSMutableArray alloc]init];
     self.hospitalsMap.showsUserLocation = YES;
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -39,7 +41,13 @@
 }
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-    
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+
+    self.startDraw = [[UIButton alloc]initWithFrame:CGRectMake(width-70, 50, 60, 60)];
+    [self.startDraw setBackgroundImage:[UIImage imageNamed:@"draw something.png"] forState:UIControlStateNormal];
+    [self.startDraw addTarget:self action:@selector(startDraw:) forControlEvents:UIControlEventTouchUpInside];
+    [self.hospitalsMap addSubview:self.startDraw];
+
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];
@@ -102,9 +110,15 @@
     
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    
     UITouch *touch = [touches anyObject];
     currentPoint = [touch locationInView:self.hospitalsMap];
+//    if ([pointsArray containsObject:[NSValue valueWithCGPoint:currentPoint]]) {
+//        NSLog(@"stop ****************************");
+//        [self stopDraw:self];
+//        return;
+//    }
+    
+    [pointsArray addObject:[NSValue valueWithCGPoint:currentPoint]];
     UIGraphicsBeginImageContext(CGSizeMake(self.hospitalsMap.frame.size.width, self.hospitalsMap.frame.size.height));
     [drawImage.image drawInRect:CGRectMake(0, 0, self.hospitalsMap.frame.size.width, self.hospitalsMap.frame.size.height)];
     CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
