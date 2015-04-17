@@ -16,6 +16,7 @@
 		213B5C141ACF104700C1B46F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213B5C131ACF104700C1B46F /* Images.xcassets */; };
 		213B5C171ACF104700C1B46F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213B5C151ACF104700C1B46F /* LaunchScreen.xib */; };
 		213B5C231ACF104700C1B46F /* NearMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B5C221ACF104700C1B46F /* NearMeTests.m */; };
+		219E39CF1AE1B9D600C35799 /* MKAJsonPostRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 219E39CE1AE1B9D600C35799 /* MKAJsonPostRequestHelper.m */; };
 		21F04FB81ACF20AF007A085F /* BloodDonarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F04FB71ACF20AF007A085F /* BloodDonarViewController.m */; };
 		21F04FBB1ACF24B3007A085F /* draw something.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F04FBA1ACF24B3007A085F /* draw something.png */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,8 @@
 		213B5C1C1ACF104700C1B46F /* NearMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		213B5C211ACF104700C1B46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		213B5C221ACF104700C1B46F /* NearMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearMeTests.m; sourceTree = "<group>"; };
+		219E39CD1AE1B9D600C35799 /* MKAJsonPostRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKAJsonPostRequestHelper.h; sourceTree = "<group>"; };
+		219E39CE1AE1B9D600C35799 /* MKAJsonPostRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKAJsonPostRequestHelper.m; sourceTree = "<group>"; };
 		21F04FB61ACF20AF007A085F /* BloodDonarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloodDonarViewController.h; sourceTree = "<group>"; };
 		21F04FB71ACF20AF007A085F /* BloodDonarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloodDonarViewController.m; sourceTree = "<group>"; };
 		21F04FBA1ACF24B3007A085F /* draw something.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "draw something.png"; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 				213B5C0E1ACF104600C1B46F /* SecondViewController.m */,
 				21F04FB61ACF20AF007A085F /* BloodDonarViewController.h */,
 				21F04FB71ACF20AF007A085F /* BloodDonarViewController.m */,
+				219E39CD1AE1B9D600C35799 /* MKAJsonPostRequestHelper.h */,
+				219E39CE1AE1B9D600C35799 /* MKAJsonPostRequestHelper.m */,
 				213B5C101ACF104600C1B46F /* Main.storyboard */,
 				213B5C131ACF104700C1B46F /* Images.xcassets */,
 				213B5C151ACF104700C1B46F /* LaunchScreen.xib */,
@@ -250,6 +255,7 @@
 				213B5C091ACF104500C1B46F /* AppDelegate.m in Sources */,
 				213B5C0C1ACF104600C1B46F /* FirstViewController.m in Sources */,
 				213B5C061ACF104500C1B46F /* main.m in Sources */,
+				219E39CF1AE1B9D600C35799 /* MKAJsonPostRequestHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
