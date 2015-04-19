@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "AsyncRequest.h"
+#import "MKPolygon+PointInPolygon.h"
+#import "MKPolygon+Centroid.h"
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width 
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -37,6 +40,9 @@
 - (IBAction)stopDraw:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *dtopDraw;
 @property(nonatomic,strong)NSMutableArray *pointsArray;
+@property (nonatomic, strong) NSArray *hospitals;
+@property(assign)BOOL isDraw;
+
 
 @end
 

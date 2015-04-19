@@ -21,7 +21,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"Hospitals";
-    pointsArray = [[NSMutableArray alloc]init];
     latLang = [[NSMutableArray alloc]init];
     self.hospitalsMap.showsUserLocation = YES;
     self.locationManager = [[CLLocationManager alloc] init];
@@ -65,6 +64,7 @@
     self.dtopDraw.hidden = YES;
     self.startDraw.hidden = NO;
     [self.hospitalsMap removeOverlays:self.hospitalsMap.overlays];
+    
 
 }
 -(void)viewDidAppear:(BOOL)animated {
@@ -101,13 +101,18 @@
     return [NSString stringWithFormat:@"latitude: %f longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
 }
 - (IBAction)startDraw:(id)sender {
+    self.isDraw = YES;
     self.hospitalsMap.userInteractionEnabled = NO;
+    [latLang removeAllObjects];
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     drawImage.image = [defaults objectForKey:@"drawImageKey"];
     drawImage = [[UIImageView alloc] initWithImage:nil];
     drawImage.frame = CGRectMake(0, 0, self.hospitalsMap.frame.size.width, self.hospitalsMap.frame.size.height);
     [self.hospitalsMap addSubview:drawImage];
+    latLang = [[NSMutableArray alloc]init];
     drawImage.backgroundColor = [UIColor clearColor];
+//    polygon = nil;
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
@@ -134,8 +139,11 @@
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 {
-    NSLog(@"stop ****************************");
-    [self stopDraw:self];
+    if (self.isDraw) {
+        self.isDraw = NO;
+        NSLog(@"stop ****************************");
+        [self stopDraw:self];
+    }
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
@@ -175,11 +183,12 @@
 - (IBAction)stopDraw:(id)sender {
     [drawingView removeFromSuperview];
     [drawImage removeFromSuperview];
+    [self sendRequest];
     self.dtopDraw.hidden = NO;
     self.startDraw.hidden = YES;
 
     self.hospitalsMap.userInteractionEnabled = YES;
-    NSLog(@"latLang:%@",latLang);
+   // NSLog(@"latLang:%@",latLang);
 
     CLLocationCoordinate2D *coords =
     
@@ -196,9 +205,12 @@
     polygon = [MKPolygon polygonWithCoordinates:coords count:[latLang count]];
     
     free(coords);
-    [latLang removeAllObjects];
     [self.hospitalsMap addOverlay:polygon];
+    [latLang removeAllObjects];
+
+
 }
+
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay
 
 {
@@ -212,4 +224,119 @@
     return polygonView;
     
 }
+-(void)sendRequest{
+    CLLocationCoordinate2D loc =[polygon centerCoordinateForPoints:polygon.points pointCount:polygon.pointCount];
+    NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=%f,%f&radius=500&types=hospital&key=AIzaSyA9xkXymeluJ8utaITKDw4GtOAy7nem28U",loc.latitude,loc.longitude];
+    NSLog(@"Url:%@",url);
+    AsyncRequest *request =
+    [AsyncRequest requestWithURL:url
+                          params:nil
+                       onSuccess:^(NSData *data) {
+                           /* use data */
+                          // NSLog(@"%@",data);
+                           [self processHospitals:data];
+                       } onErrror:^(NSError *error) {
+                           /* manage error */
+                           NSLog(@"%@",[error localizedDescription]);
+                       }];
+    [request setTimeoutInterval:80]; // seconds
+    [request start];
+}
+//-(void)getCenterOfPolygon(MKPolygon *)inPol{
+//    float PI=22/7;
+//    float  X=0;
+//    float Y=0;
+//    float Z=0;
+//    polygon.getPath().forEach(function (vertex, inex) {
+//        lat1=vertex.lat();
+//        lon1=vertex.lng();
+//        lat1 = lat1 * PI/180
+//        lon1 = lon1 * PI/180
+//        X += Math.cos(lat1) * Math.cos(lon1)
+//        Y += Math.cos(lat1) * Math.sin(lon1)
+//        Z += Math.sin(lat1)
+//    })
+//    Lon = Math.atan2(Y, X)
+//    Hyp = Math.sqrt(X * X + Y * Y)
+//    Lat = Math.atan2(Z, Hyp)
+//    Lat = Lat * 180/PI
+//    Lon = Lon * 180/PI 
+//    return new google.maps.LatLng(Lat,Lon);
+//}
+-(void)processHospitals:(NSData *)response {
+    NSLog(@"Process Started");
+    NSError *jsonParsingError = nil;
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:response options:0 error:&jsonParsingError];
+    NSLog(@"%@",dict);
+
+    self.hospitals = [[NSArray alloc]init];
+    if ( jsonParsingError == nil && dict ) {
+        self.hospitals = [dict valueForKey:@"results"];
+        NSLog(@"*********%@",self.hospitals);
+        [self addAnnotation:self.hospitals];
+    }
+}
+-(void)addAnnotation:(NSArray *)hospArray{
+    
+    for (NSDictionary *dict in hospArray) {
+        if ([polygon pointInPolygon:[self useLocationString:[dict valueForKeyPath:@"geometry.location.lat"] andLong:[dict valueForKeyPath:@"geometry.location.lng"]]]) {
+            MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+            point.coordinate = [self useLocationString:[dict valueForKeyPath:@"geometry.location.lat"] andLong:[dict valueForKeyPath:@"geometry.location.lng"]];
+            point.title = [dict valueForKey:@"name"];
+            point.subtitle = [dict valueForKey:@"vicinity"];
+            [self.hospitalsMap addAnnotation:point];
+        }
+
+    }
+
+}
+- (MKAnnotationView *)mapView:(MKMapView *)mv viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    //UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"ttile" message:@"working" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+    //[alert show];
+    MKAnnotationView *view = nil;
+    if(annotation != mv.userLocation) {
+        // if it's NOT the user's current location pin, create the annotation
+        MKPinAnnotationView *parkAnnotation = (MKPinAnnotationView*)annotation;
+        // Look for an existing view to reuse
+        view = [mv dequeueReusableAnnotationViewWithIdentifier:@"parkAnnotation"];
+        // If an existing view is not found, create a new one
+        if(view == nil) {
+            view = [[MKPinAnnotationView alloc] initWithAnnotation:(id) parkAnnotation
+                                                   reuseIdentifier:@"parkAnnotation"];
+        }
+        
+        // Now we have a view for the annotation, so let's set some properties
+        [(MKPinAnnotationView *)view setPinColor:MKPinAnnotationColorRed];
+        [(MKPinAnnotationView *)view setAnimatesDrop:YES];
+        [view setCanShowCallout:YES];
+        
+        // Now create buttons for the annotation view
+        // The 'tag' properties are set so that we can identify which button was tapped later
+
+        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        rightButton.tag = 1;
+        
+        // Add buttons to annotation view
+        [view setRightCalloutAccessoryView:rightButton];
+    }
+    
+    // send this annotation view back to MKMapView so it can add it to the pin
+    return view;
+}
+
+- (CLLocationCoordinate2D) useLocationString:(NSString*)lat andLong:(NSString *)lon
+{
+    // the location object that we want to initialize based on the string
+    CLLocationCoordinate2D loc;
+    
+    // split the string by comma
+    
+    // set our latitude and longitude based on the two chunks in the string
+    loc.latitude = lat.doubleValue;
+    loc.longitude = lon.doubleValue;
+    
+    return loc;
+}
+
 @end

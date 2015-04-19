@@ -16,6 +16,10 @@
 		213B5C141ACF104700C1B46F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213B5C131ACF104700C1B46F /* Images.xcassets */; };
 		213B5C171ACF104700C1B46F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213B5C151ACF104700C1B46F /* LaunchScreen.xib */; };
 		213B5C231ACF104700C1B46F /* NearMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B5C221ACF104700C1B46F /* NearMeTests.m */; };
+		21B8153D1AE2F2F200083131 /* AsyncRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8153C1AE2F2F200083131 /* AsyncRequest.m */; };
+		21B8153F1AE2F9DC00083131 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B8153E1AE2F9D900083131 /* pin.png */; };
+		21B815421AE3054C00083131 /* MKPolygon+PointInPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B815411AE3054C00083131 /* MKPolygon+PointInPolygon.m */; };
+		21B815451AE3153000083131 /* MKPolygon+Centroid.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B815441AE3153000083131 /* MKPolygon+Centroid.m */; };
 		21F04FB81ACF20AF007A085F /* BloodDonarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F04FB71ACF20AF007A085F /* BloodDonarViewController.m */; };
 		21F04FBB1ACF24B3007A085F /* draw something.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F04FBA1ACF24B3007A085F /* draw something.png */; };
 /* End PBXBuildFile section */
@@ -47,6 +51,13 @@
 		213B5C1C1ACF104700C1B46F /* NearMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		213B5C211ACF104700C1B46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		213B5C221ACF104700C1B46F /* NearMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearMeTests.m; sourceTree = "<group>"; };
+		21B8153B1AE2F2F200083131 /* AsyncRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncRequest.h; sourceTree = "<group>"; };
+		21B8153C1AE2F2F200083131 /* AsyncRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncRequest.m; sourceTree = "<group>"; };
+		21B8153E1AE2F9D900083131 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		21B815401AE3054B00083131 /* MKPolygon+PointInPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKPolygon+PointInPolygon.h"; sourceTree = "<group>"; };
+		21B815411AE3054C00083131 /* MKPolygon+PointInPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKPolygon+PointInPolygon.m"; sourceTree = "<group>"; };
+		21B815431AE3153000083131 /* MKPolygon+Centroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKPolygon+Centroid.h"; sourceTree = "<group>"; };
+		21B815441AE3153000083131 /* MKPolygon+Centroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKPolygon+Centroid.m"; sourceTree = "<group>"; };
 		21F04FB61ACF20AF007A085F /* BloodDonarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloodDonarViewController.h; sourceTree = "<group>"; };
 		21F04FB71ACF20AF007A085F /* BloodDonarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloodDonarViewController.m; sourceTree = "<group>"; };
 		21F04FBA1ACF24B3007A085F /* draw something.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "draw something.png"; sourceTree = "<group>"; };
@@ -96,6 +107,12 @@
 				21F04FB91ACF2369007A085F /* Resources */,
 				213B5C071ACF104500C1B46F /* AppDelegate.h */,
 				213B5C081ACF104500C1B46F /* AppDelegate.m */,
+				21B8153B1AE2F2F200083131 /* AsyncRequest.h */,
+				21B8153C1AE2F2F200083131 /* AsyncRequest.m */,
+				21B815401AE3054B00083131 /* MKPolygon+PointInPolygon.h */,
+				21B815411AE3054C00083131 /* MKPolygon+PointInPolygon.m */,
+				21B815431AE3153000083131 /* MKPolygon+Centroid.h */,
+				21B815441AE3153000083131 /* MKPolygon+Centroid.m */,
 				213B5C0A1ACF104500C1B46F /* FirstViewController.h */,
 				213B5C0B1ACF104600C1B46F /* FirstViewController.m */,
 				213B5C0D1ACF104600C1B46F /* SecondViewController.h */,
@@ -140,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				21F04FBA1ACF24B3007A085F /* draw something.png */,
+				21B8153E1AE2F9D900083131 /* pin.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -227,6 +245,7 @@
 				213B5C121ACF104600C1B46F /* Main.storyboard in Resources */,
 				21F04FBB1ACF24B3007A085F /* draw something.png in Resources */,
 				213B5C171ACF104700C1B46F /* LaunchScreen.xib in Resources */,
+				21B8153F1AE2F9DC00083131 /* pin.png in Resources */,
 				213B5C141ACF104700C1B46F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,11 +264,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B8153D1AE2F2F200083131 /* AsyncRequest.m in Sources */,
 				21F04FB81ACF20AF007A085F /* BloodDonarViewController.m in Sources */,
+				21B815451AE3153000083131 /* MKPolygon+Centroid.m in Sources */,
 				213B5C0F1ACF104600C1B46F /* SecondViewController.m in Sources */,
 				213B5C091ACF104500C1B46F /* AppDelegate.m in Sources */,
 				213B5C0C1ACF104600C1B46F /* FirstViewController.m in Sources */,
 				213B5C061ACF104500C1B46F /* main.m in Sources */,
+				21B815421AE3054C00083131 /* MKPolygon+PointInPolygon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
