@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#define GOOGLE_KEY 3.28084*3.28084
+#define HOSPITAL_KEYWORD @"hospital"
+#define PHARMACY_KEYWORD @"pharmacy"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

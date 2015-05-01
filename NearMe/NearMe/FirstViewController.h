@@ -11,10 +11,14 @@
 #import "AsyncRequest.h"
 #import "MKPolygon+PointInPolygon.h"
 #import "MKPolygon+Centroid.h"
+#import "MBProgressHUD.h"
+#import "AppDelegate.h"
+#import "KMAnnotation.h"
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width 
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
-
+#define MAP_CONSTANT 111133.14198903814
+#define METER_FOOT 3.28084*3.28084
 @interface FirstViewController : UIViewController<CLLocationManagerDelegate>
 {
     UIImageView *drawImage;
@@ -31,6 +35,7 @@
     NSMutableArray *latLang;
     
     MKPolygon *polygon;
+    MBProgressHUD *HUD;
 }
 @property (weak, nonatomic) IBOutlet MKMapView *hospitalsMap;
 @property(nonatomic, retain) CLLocationManager *locationManager;

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -37,11 +38,11 @@
                                 <exclude reference="xID-GL-RUS"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="W60-Qg-E03"/>
                                 <exclude reference="ItG-Wc-9DV"/>
                                 <exclude reference="fOm-Kd-jCq"/>
                                 <exclude reference="mmw-f6-bnr"/>
                                 <exclude reference="tBn-D7-cdI"/>
-                                <exclude reference="W60-Qg-E03"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -49,11 +50,11 @@
                                 <include reference="xID-GL-RUS"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="W60-Qg-E03"/>
                                 <include reference="ItG-Wc-9DV"/>
                                 <include reference="fOm-Kd-jCq"/>
                                 <include reference="mmw-f6-bnr"/>
                                 <include reference="tBn-D7-cdI"/>
-                                <include reference="W60-Qg-E03"/>
                             </mask>
                         </variation>
                     </view>
@@ -87,62 +88,22 @@
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="vZn-Rj-0CG"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5My-58-TNG">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="4WH-Fh-xJn"/>
-                                    <constraint firstAttribute="width" constant="60" id="78R-MT-1wC"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="draw something.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="4WH-Fh-xJn"/>
-                                        <exclude reference="78R-MT-1wC"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="4WH-Fh-xJn"/>
-                                        <include reference="78R-MT-1wC"/>
-                                    </mask>
-                                </variation>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="5My-58-TNG" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="Rsy-OG-0ca">
-                                <variation key="widthClass=compact" constant="9"/>
-                            </constraint>
-                            <constraint firstItem="5My-58-TNG" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="19" id="rg5-Qm-Fuk">
-                                <variation key="widthClass=compact" constant="11"/>
-                            </constraint>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="eTV-H7-mVn"/>
-                                <exclude reference="5My-58-TNG"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="Rsy-OG-0ca"/>
-                                <exclude reference="rg5-Qm-Fuk"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="eTV-H7-mVn"/>
-                                <include reference="5My-58-TNG"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="Rsy-OG-0ca"/>
-                                <include reference="rg5-Qm-Fuk"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="ajx-bo-oyz"/>
                     <connections>
-                        <outlet property="pharmacyMap" destination="eTV-H7-mVn" id="OhW-C2-bwb"/>
+                        <outlet property="hospitalsMap" destination="eTV-H7-mVn" id="gDL-eH-3t5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -162,7 +123,6 @@
                     <connections>
                         <segue destination="TvO-LB-jcI" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="Kdn-E8-6EF" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="Mco-cW-U9I" kind="relationship" relationship="viewControllers" id="gIS-e0-t5l"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -188,90 +148,6 @@
             </objects>
             <point key="canvasLocation" x="432" y="-329"/>
         </scene>
-        <!--Blood-->
-        <scene sceneID="obX-Q7-KJu">
-            <objects>
-                <viewController title="Blood" id="Vcm-pa-Fz8" customClass="BloodDonarViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Vjk-87-QmQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="Tyu-SQ-QwI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gxz-pr-iQE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dh8-nH-mjG">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="487"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="Vcm-pa-Fz8" id="Dsb-Vm-1L5"/>
-                                </connections>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYF-Vs-G3n">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="5Ta-8x-a0O"/>
-                                    <constraint firstAttribute="height" constant="60" id="CyE-rl-3hV"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="draw something.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="5Ta-8x-a0O"/>
-                                        <exclude reference="CyE-rl-3hV"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="5Ta-8x-a0O"/>
-                                        <include reference="CyE-rl-3hV"/>
-                                    </mask>
-                                </variation>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="VYF-Vs-G3n" firstAttribute="top" secondItem="Vjk-87-QmQ" secondAttribute="bottom" constant="35" id="X1i-mG-erq">
-                                <variation key="widthClass=compact" constant="15"/>
-                            </constraint>
-                            <constraint firstItem="VYF-Vs-G3n" firstAttribute="trailing" secondItem="gxz-pr-iQE" secondAttribute="trailingMargin" id="YC0-AK-oM2">
-                                <variation key="widthClass=compact" constant="10"/>
-                            </constraint>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="dh8-nH-mjG"/>
-                                <exclude reference="VYF-Vs-G3n"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="X1i-mG-erq"/>
-                                <exclude reference="YC0-AK-oM2"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="dh8-nH-mjG"/>
-                                <include reference="VYF-Vs-G3n"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="X1i-mG-erq"/>
-                                <include reference="YC0-AK-oM2"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" id="pv7-YV-5CP"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="donarMap" destination="dh8-nH-mjG" id="Srd-vG-Gdy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n1G-vC-Nra" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1750.5" y="966"/>
-        </scene>
         <!--Medicals-->
         <scene sceneID="Vy9-8U-GnE">
             <objects>
@@ -291,27 +167,5 @@
             </objects>
             <point key="canvasLocation" x="759" y="331"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="fgP-jP-KQm">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mco-cW-U9I" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="MoW-iH-kbB"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3aW-Ix-DVJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Vcm-pa-Fz8" kind="relationship" relationship="rootViewController" id="ic8-s4-dSc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Pd-hd-lTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="759" y="1062"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="draw something.png" width="96" height="96"/>
-    </resources>
 </document>
