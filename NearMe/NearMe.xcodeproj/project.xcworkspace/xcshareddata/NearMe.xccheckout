@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>7CA5B8D7-315E-4B6E-9188-6C688E846CE7</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>NearMe</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>93FEE4B1F35BB2C1BE5A641B1D6432793ABB3CD5</key>
 		<string>https://github.com/MithunReddy/NearMe.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>NearMe/NearMe.xcodeproj/project.xcworkspace</string>
+	<string>NearMe/NearMe.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>93FEE4B1F35BB2C1BE5A641B1D6432793ABB3CD5</key>
